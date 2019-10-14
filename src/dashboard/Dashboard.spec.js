@@ -16,4 +16,7 @@ describe('Dashboard component', () => {
     it('dashboard component matches the snapshot', () => {
         expect(wrapper.container).toMatchSnapshot();
     });
+    it('dashboard component to have a lock gate button', () => {
+        expect(wrapper.queryByText(/Lock Gate/i)).toBeInTheDocument();
+    });
 })
