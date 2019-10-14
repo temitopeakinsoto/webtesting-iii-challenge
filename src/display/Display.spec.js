@@ -15,5 +15,9 @@ beforeEach(() => {
 describe('Display component', () => {
     it('display component matches the snapshot', () => {
         expect(wrapper.container).toMatchSnapshot();
+    });
+    it('display component show gate as unlocked and open', () => {
+        expect(wrapper.queryByText(/unlocked/i)).toBeInTheDocument();
+        expect(wrapper.queryByText(/open/i)).toBeInTheDocument();
     });    
 })
