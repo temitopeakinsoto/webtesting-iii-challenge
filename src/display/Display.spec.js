@@ -19,5 +19,6 @@ describe('Display component', () => {
     it('display component show gate as unlocked and open', () => {
         expect(wrapper.queryByText(/unlocked/i)).toBeInTheDocument();
         expect(wrapper.queryByText(/open/i)).toBeInTheDocument();
-    });    
+    });
+    
 })
