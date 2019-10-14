@@ -19,4 +19,15 @@ describe('Dashboard component', () => {
     it('dashboard component to have a lock gate button', () => {
         expect(wrapper.queryByText(/Lock Gate/i)).toBeInTheDocument();
     });
+    it('dashboard component to have an open gate button', () => {
+        expect(wrapper.queryByText(/Close Gate/i)).toBeInTheDocument();
+    });
+
+    it('dashboard component to have a lock gate button', () => {
+        expect(wrapper.queryByText(/Unlocked/i)).toBeInTheDocument();
+    });
+    it('dashboard component to have an open gate button', () => {
+        expect(wrapper.queryByText(/Open/i)).toBeInTheDocument();
+    });
+    
 })
