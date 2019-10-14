@@ -12,7 +12,7 @@ beforeEach(() => {
   wrapper = rtl.render(<Dashboard />);
 });
 
-describe('Dashboard component', () => {
+describe('Dashboard component display and controls', () => {
     it('dashboard component matches the snapshot', () => {
         expect(wrapper.container).toMatchSnapshot();
     });
