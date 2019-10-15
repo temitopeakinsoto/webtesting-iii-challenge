@@ -12,8 +12,14 @@ beforeEach(() => {
   wrapper = rtl.render(<Controls />);
 });
 
-describe('Controls component', () => {
-    it('display component matches the snapshot', () => {
-        expect(wrapper.container).toMatchSnapshot();
-    });    
+describe('Control Toggles On Click of Button', () => {
+    it('clicking lock gate button doesn\'t open it', () => {
+        expect(wrapper.queryByText(/close gate/i)).toBeInTheDocument();
+        expect(wrapper.queryByText(/lock gate/i)).toBeDisabled();
+        rtl.fireEvent.click(wrapper.queryByText(/close gate/i));
+        expect(wrapper.queryByText(/lock gate/i).closest('button')).toHaveClass('toggle-btn');
+        rtl.fireEvent.click(wrapper.queryByText(/lock gate/i));
+        rtl.fireEvent.click(wrapper.queryByText(/close gate/i));
+        expect(wrapper.queryByText(/close gate/i)).toHaveClass('toggle-btn');
+    })
 })
